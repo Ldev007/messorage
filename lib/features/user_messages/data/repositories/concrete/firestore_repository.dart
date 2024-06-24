@@ -3,13 +3,16 @@ import 'package:chordify/features/user_messages/data/repositories/abstract/remot
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 
+import '../../../../../firebase_options.dart';
+
 class FirestoreRepoImplementation implements RemoteRepo {
   CollectionReference<Map<String, dynamic>>? _userMessagesCollection;
 
   init() async {
     _userMessagesCollection =
         FirebaseFirestore.instance.collection('user_messages');
-    await Firebase.initializeApp();
+    await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform);
   }
 
   @override
