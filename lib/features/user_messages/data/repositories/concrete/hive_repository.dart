@@ -87,6 +87,10 @@ class HiveRepoImplementation implements LocalRepo {
     );
     submittedMessagesBox!.put(userMsg.id, updatedUserMsg);
   }
+
+  @override
+  Future<void> deletePendingMessage(UserMessage pendingMessage) async =>
+      pendingMessagesBox!.delete(pendingMessage.id);
 }
 
 @riverpod

@@ -59,11 +59,13 @@ class UserMessages extends _$UserMessages {
       if (remoteMsgsCount != localMsgsCount) {
         state = const AsyncValue.loading();
         final localPendingMsgs = _hiveService.getPendingMessages();
-        _firestoreService.publishMessages(
-            pendingUserMessages: localPendingMsgs);
-        for (var localPendingMessage in localPendingMsgs) {
-          _hiveService.setMessageAsPublished(localPendingMessage);
+
+        for (var aPendingMessage in localPendingMsgs) {
+          await _firestoreService.publishMessage(userMessage: aPendingMessage);
+          _hiveService.setMessageAsPublished(aPendingMessage);
+          _hiveService.deletePendingMessage(aPendingMessage);
         }
+
         state = AsyncValue.data(_hiveService.getSubmittedMessages());
       }
     } catch (error, strace) {

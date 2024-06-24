@@ -24,4 +24,7 @@ class HiveService {
 
   Future<void> setMessageAsPublished(UserMessage userMsg) => _hiveRepo
       .setMessageAsPublished(LocalUserMessage.fromJson(userMsg.toJson()));
+
+  Future<void> deletePendingMessage(UserMessage pendingMessage) =>
+      _hiveRepo.deletePendingMessage(pendingMessage);
 }

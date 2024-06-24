@@ -1,4 +1,5 @@
 import 'package:chordify/features/user_messages/data/models/local_user_message.dart';
+import 'package:chordify/features/user_messages/domain/user_message.dart';
 
 abstract class LocalRepo {
   dynamic getPendingMessages();
@@ -7,4 +8,5 @@ abstract class LocalRepo {
       {required List<LocalUserMessage> userMessages});
   Future<bool> addSubmittedMessage({required LocalUserMessage userMessage});
   Future<bool> addPendingMessage({required LocalUserMessage userMessage});
+  Future<void> deletePendingMessage(UserMessage pendingMessage);
 }
