@@ -36,16 +36,18 @@ class FirestoreRepoImplementation implements RemoteRepo {
   }
 
   @override
-  Future<DocumentReference<Map<String, dynamic>>> saveMessage(
-          {required RemoteUserMessage userMsg}) async =>
-      await _userMessagesCollection!.add(userMsg.toJson());
+  Future<void> saveMessage({required RemoteUserMessage userMsg}) async {
+    return await _userMessagesCollection!.doc(userMsg.id).set(userMsg.toJson());
+  }
 
   @override
   Future<bool> savePendingMessages(
       {required List<RemoteUserMessage> pendingUserMessages}) async {
     try {
       for (RemoteUserMessage pendingUserMsg in pendingUserMessages) {
-        _userMessagesCollection!.add(pendingUserMsg.toJson());
+        _userMessagesCollection!
+            .doc(pendingUserMsg.id)
+            .set(pendingUserMsg.toJson());
       }
     } catch (e, s) {
       print('-SAVING PENDING MESSAGES \n $e \n--\n $s');
