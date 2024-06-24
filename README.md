@@ -12,3 +12,5 @@ Key points covered :
 
 TODO :
 - Revamp text field UI
+- Textfield validations
+- Fix auto toast prompt logic
