@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "843803792381",
+    "project_id": "prep-294dd",
+    "storage_bucket": "prep-294dd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843803792381:android:ec70191d9690d3eefb7f94",
+        "android_client_info": {
+          "package_name": "com.chordify.messorage"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_2-bwOXCD7g3pQLNC38M31dvuWeszAgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843803792381:android:b59c03b9b3bb0e04fb7f94",
+        "android_client_info": {
+          "package_name": "com.example.notifations"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_2-bwOXCD7g3pQLNC38M31dvuWeszAgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
